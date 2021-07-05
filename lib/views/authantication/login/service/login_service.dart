@@ -1,4 +1,3 @@
-import 'package:celebi_app/core/constants/enums/http_request_enum.dart';
 import 'package:celebi_app/core/init/network/core_dio_interface.dart';
 import 'package:celebi_app/views/_product/enum/network_route_enum.dart';
 import 'package:dio/dio.dart';

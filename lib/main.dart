@@ -52,7 +52,7 @@ class MyApp extends StatelessWidget {
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
       theme: context.watch<ThemeNotifier>().currentTheme,
-      home: OnBoardView(),
+      home: LoginView(),
     );
   }
 }

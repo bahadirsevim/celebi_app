@@ -66,9 +66,7 @@ class _AuthScaffoldState<T extends BaseViewModel>
               child: Container(
                   padding: EdgeInsets.all(30),
                   decoration: BoxDecoration(
-                    color: context.colors.secondary,
-                    borderRadius:
-                        BorderRadius.vertical(top: Radius.circular(50)),
+                    color: Colors.white,
                   ),
                   child: widget.onBodyBuilder(context, model)),
             ),

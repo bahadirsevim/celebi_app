@@ -16,7 +16,7 @@ class LocaleManager {
   Box? box;
   static LocaleManager get instance => _instance;
 
-  LocaleManager._init() {}
+  LocaleManager._init();
   static Future preferencesInit() async {
     _log.d('Init Setting box');
     instance.box ??= await Hive.openBox('settings');

@@ -16,29 +16,28 @@ class Body extends StatelessWidget {
   final LoginViewModel viewModel;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      child: Form(
-        key: viewModel.formState,
-        autovalidateMode: AutovalidateMode.always,
-        child: Column(
-          children: [
-            Spacer(
-              flex: 2,
-            ),
-            buildEmailField(context),
-            // şifrenin görünürlüğü için obersvera alındı
-            SizedBox(height: context.normalValue),
-            buildPasswordField(context),
-
-            buildForgetPassword(),
-            Spacer(
-              flex: 2,
-            ),
-            buildLoginButton(),
-            Spacer(),
-            buildSingUpText()
-          ],
+    return SingleChildScrollView(
+      child: Container(
+        width: double.infinity,
+        padding: EdgeInsets.only(top: context.highValue / 2),
+        child: Form(
+          key: viewModel.formState,
+          autovalidateMode: AutovalidateMode.always,
+          child: Column(
+            children: <Widget>[
+              buildEmailField(context),
+              SizedBox(
+                height: context.normalValue,
+              ),
+              buildPasswordField(context),
+              buildForgetPassword(),
+              SizedBox(
+                height: context.normalValue * 3,
+              ),
+              buildLoginButton(),
+              buildSingUpText(),
+            ],
+          ),
         ),
       ),
     );
@@ -55,12 +54,10 @@ class Body extends StatelessWidget {
   }
 
   Widget buildLoginButton() {
-   
-      return SizedTextButton(
-          text: "Login",
-          color: Colors.red,
-          onPressed: () => viewModel.fetchLoginService());
-   
+    return SizedTextButton(
+        text: "Login",
+        color: Color(0xFF7BC4B2),
+        onPressed: () => viewModel.fetchLoginService());
   }
 
   Align buildForgetPassword() {
@@ -73,6 +70,7 @@ class Body extends StatelessWidget {
 
   TextFormField buildEmailField(BuildContext context) {
     return TextFormField(
+      keyboardType: TextInputType.emailAddress,
       controller: viewModel.emailController,
       validator: (value) => value!.isValidEmail,
       decoration: InputDecoration(
@@ -87,6 +85,7 @@ class Body extends StatelessWidget {
   Observer buildPasswordField(BuildContext context) {
     return Observer(builder: (_) {
       return TextFormField(
+          keyboardType: TextInputType.visiblePassword,
           controller: viewModel.passwordController,
           obscureText: viewModel.isLockOpen,
           validator: (value) =>

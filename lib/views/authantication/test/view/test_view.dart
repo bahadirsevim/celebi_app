@@ -1,5 +1,3 @@
-import 'package:celebi_app/core/init/theme/app_theme.dart';
-import 'package:celebi_app/core/locators.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 

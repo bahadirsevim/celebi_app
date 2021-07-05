@@ -20,12 +20,12 @@ class SizedTextButton extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           color: color ?? Colors.grey,
-          borderRadius: BorderRadius.circular(26.0),
+          borderRadius: BorderRadius.circular(12.0),
         ),
         child: Center(
           child: Text(
             text,
-            style: context.textTheme.headline6!.copyWith(color: Colors.white),
+            style: context.textTheme.subtitle2!.copyWith(color: Colors.white),
           ),
         ),
       ),

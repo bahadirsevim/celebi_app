@@ -1,6 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
 
-import 'package:celebi_app/core/base/model/base_model.dart';
 
 part 'token.g.dart';
 
