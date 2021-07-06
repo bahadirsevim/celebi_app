@@ -1,6 +1,7 @@
 import 'package:celebi_app/core/base/view/base_view.dart';
 import 'package:celebi_app/views/_product/_widgets/base_widgets/auht_scaffold.dart';
 import 'package:celebi_app/views/authantication/sign_up/viewmodel/sing_up_view_model.dart';
+import 'package:celebi_app/views/authantication/sign_up/widgets/body.dart';
 import 'package:flutter/material.dart';
 
 class SingUpView extends StatelessWidget {
@@ -14,9 +15,7 @@ class SingUpView extends StatelessWidget {
         viewModel: viewModel,
         onBodyBuilder: (context, viewModel) => Container(
           width: double.infinity,
-          child: Form(
-            child: Column(),
-          ),
+          child: Body(viewModel: viewModel),
         ),
       ),
       onModelReady: (model) {
